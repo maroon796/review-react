@@ -24,7 +24,11 @@ const Review = () => {
   };
 
   const randomPerson = () => {
-    console.log();
+    let random = Math.floor(Math.random() * 4);
+    if (random === index && random !== people.length - 1) {
+      random += 1;
+    }
+    setIndex(random);
   };
 
   return (
