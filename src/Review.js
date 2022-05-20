@@ -6,7 +6,28 @@ const Review = () => {
   const [index, setIndex] = useState(0);
   console.log(people);
   const { id, image, job, name, text } = people[index];
-  return <h2>review component</h2>;
+  return (
+    <article className="review">
+      <div className="img-container">
+        <img src={image} alt={name} className="person-img" />
+        <span className="quote-icon">
+          <FaQuoteRight />
+        </span>
+      </div>
+      <h4 className="author">{name}</h4>
+      <p className="job">{job}</p>
+      <p className="info">{text}</p>
+      <div className="button-container">
+        <button className="prev-btn">
+          <FaChevronLeft />
+        </button>
+        <button className="next-btn">
+          <FaChevronRight />
+        </button>
+      </div>
+      <button className="random-btn">Random Review</button>
+    </article>
+  );
 };
 
 export default Review;
